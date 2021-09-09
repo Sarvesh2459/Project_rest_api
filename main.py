@@ -1,8 +1,8 @@
-from flask import Flask
+from flask import Flask,render_template
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
+app = Flask(__name__ , static_url_path="" , static_folder="./static/css" , template_folder="./static/css")
 api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(app)
@@ -15,6 +15,10 @@ class VideoModel(db.Model):
 
 	def __repr__(self):
 		return f"Video(name = {name}, views = {views}, likes = {likes})"
+@app.route('/')
+def home():
+	Method = ['PATCH', 'GET', 'PUT', 'DELETE']
+	return render_template('index.html', Method=Method)
 
 video_put_args = reqparse.RequestParser()
 video_put_args.add_argument("name", type=str, help="Name of the video is required", required=True)
@@ -26,9 +30,6 @@ video_update_args.add_argument("name", type=str, help="Name of the video is requ
 video_update_args.add_argument("views", type=int, help="Views of the video")
 video_update_args.add_argument("likes", type=int, help="Likes on the video")
 
-def abort_video_not_found(video_id):
-    if video_id not in videos:
-        abort(404 , message ="Could Not Find The Video ...")
 
 resource_fields = {
 	'id': fields.Integer,
@@ -82,7 +83,7 @@ class Video(Resource):
 			abort(404, message="Could not find video with that id")
 		db.session.delete(result)
 		db.session.commit()
-		return {"Message" : "deleted Successfully"}
+		return {"Message" : "Deleted Successfully"}
 
 
 api.add_resource(Video, "/video/<int:video_id>")
