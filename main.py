@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request,json
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from flask_sqlalchemy import SQLAlchemy
 
@@ -19,6 +19,21 @@ class VideoModel(db.Model):
 def home():
 	Method = ['PATCH', 'GET', 'PUT', 'DELETE']
 	return render_template('index.html', Method=Method)
+
+@app.route("/submitJSON", methods=["POST"])
+def processJSON(): 
+    jsonStr = request.get_json()
+    jsonObj = json.loads(jsonStr)
+    response = ''
+    id=jsonObj['id']
+    name = jsonObj['name']
+    views = jsonObj['views']
+    likes = jsonObj['likes']
+    f=open('a.txt' , 'w+')
+    f.write(id+"\n" + name+"\n"+views + "\n" +likes)
+    f.close()
+
+
 
 video_put_args = reqparse.RequestParser()
 video_put_args.add_argument("name", type=str, help="Name of the video is required", required=True)
