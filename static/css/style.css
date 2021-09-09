@@ -52,8 +52,35 @@ h1
     text-align: center;
 
 }
+.btn
+{
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
 
-#wft fu
+}
+
+.btn-one
+{
+    background-color: darkorange;
+    font-family: 'Roboto' , 'sans-serif';
+}
+
+.btn-two
+{
+    font-family: 'Roboto' , 'sans-serif';
+}
+
+.btn-two:hover
+{
+    background-color: darkorange;
+    transition: all 0.5s ease-in ;
+}
+.my_form
 {
     margin-top: 60px;
     display: inline-block;

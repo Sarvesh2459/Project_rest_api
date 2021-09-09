@@ -1,6 +1,6 @@
 import requests
-
-BASE = "http://127.0.0.1:5000/"
-
-response = requests.put(BASE + "video/3?id=5&name=anand&likes=1526&views=10")
-print(response.json())
+def runtest():
+    BASE = "http://127.0.0.1:8000/"
+    response = requests.patch(BASE + "video/4?id=4&name=5&views=6&likes=7")
+    return response.json()
+print(runtest())
