@@ -1,7 +1,6 @@
 from flask import Flask,render_template,request,json
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from flask_sqlalchemy import SQLAlchemy
-import test
 app = Flask(__name__)
 api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -84,4 +83,4 @@ class Video(Resource):
 api.add_resource(Video, "/video/<int:video_id>")
 
 if __name__ == "__main__":
-	app.run(host="localhost", port=8000, debug=True)
+	app.run(debug=True)

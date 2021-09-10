@@ -5,7 +5,7 @@
 }
 header
 {
-    background-image:linear-gradient(rgba(0,0,0,0.5) ,rgba(0,0,0,0.5)) ,url(astronaut.jpg);
+    background-image:linear-gradient(rgba(0,0,0,0.5) ,rgba(0,0,0,0.5)) ,url(39624.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -33,7 +33,7 @@ body
     position: absolute;
     width: 1920px;
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 60px;
 }
 
 h1
@@ -52,34 +52,7 @@ h1
     text-align: center;
 
 }
-.btn
-{
-    border: 1px solid white;
-    padding: 10px 30px;
-    color: white;
-    text-decoration: none;
-    margin-right: 5px;
-    font-size: 13px;
-    text-transform: uppercase;
 
-}
-
-.btn-one
-{
-    background-color: darkorange;
-    font-family: 'Roboto' , 'sans-serif';
-}
-
-.btn-two
-{
-    font-family: 'Roboto' , 'sans-serif';
-}
-
-.btn-two:hover
-{
-    background-color: darkorange;
-    transition: all 0.5s ease-in ;
-}
 .my_form
 {
     margin-top: 60px;
