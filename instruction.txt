@@ -1,0 +1,2 @@
+You Can run this project using postman 
+Or Manually Enterring The URL in test.py file by running our home page(main.py).

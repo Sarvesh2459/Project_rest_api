@@ -1,0 +1,41 @@
+<!doctype html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+    <title>Business Website</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+	<header>
+        <div class = "row">
+        <div class="logo">
+        <img src=logo.png>
+    <div class="hero">
+    <h1>Flask RESTful Services</h1>
+
+        <div class="dropdown" id="wft">
+        <form name="my_form"  align="center"><fu class="text" style="color : white ; font-size: 30px ; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+        <select name="methods" action="/index.html" style="height : 30px ">
+		        {% for method in Method %}
+			        <option name="method" value="{{method}}" SELECTED>{{method}}</option>"
+		        {% endfor %}
+	        </select>
+		    Enter Video ID&nbsp; <input name="id" type="text" style="height : 30px"></fu>
+		        <input type="submit" class="btm btn-sm" onclick="submitData('submitJSON')" value="Submit">
+            <div class='name' align="center" style="color : white ; font-size: 30px ; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+        Enter Video Name&nbsp; <input type="text" name = "name" style="height : 30px"></fu>
+        </div>    
+        <div class='views' align="center" style="color : white ; font-size: 30px ; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+        Enter Video views&nbsp; <input type="text" name = "views" style="height : 30px"></fu>
+        </div>
+        <div class='likes' align="center" style="color : white ; font-size: 30px ; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+        Enter Video likes&nbsp; <input type="text" name = "likes" style="height : 30px"></fu>
+        </div>
+                </form>
+        
+        
+    </div>
+    </div>
+    </header>
+</body>
+</html>
